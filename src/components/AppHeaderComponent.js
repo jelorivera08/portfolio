@@ -1,5 +1,7 @@
 import React from "react";
 import { withStyles } from "@material-ui/core/styles";
+import "./styles/AppHeaderComponent.css";
+import { CSSTransition } from "react-transition-group";
 
 const styles = () => ({
   header: {
@@ -19,10 +21,18 @@ const styles = () => ({
 
 const AppHeaderComponent = props => (
   <div className={props.classes.header}>
-    <div className={props.classes.subHeaders}>work</div>
-    <div className={props.classes.subHeaders}>about</div>
-    <div className={props.classes.subHeaders}>contact</div>
-    <div className={props.classes.subHeaders}>resume</div>
+    <CSSTransition in={true} appear={true} timeout={1000} classNames="fadeWork">
+      <div className={props.classes.subHeaders}>work</div>
+    </CSSTransition>
+    <CSSTransition in={true} appear={true} timeout={1000} classNames="fadeAbout">
+      <div className={props.classes.subHeaders}>about</div>
+    </CSSTransition>
+    <CSSTransition in={true} appear={true} timeout={1000} classNames="fadeContact">
+      <div className={props.classes.subHeaders}>contact</div>
+    </CSSTransition>
+    <CSSTransition in={true} appear={true} timeout={1000} classNames="fadeResume">
+      <div className={props.classes.subHeaders}>resume</div>
+    </CSSTransition>
   </div>
 );
 

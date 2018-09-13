@@ -1,0 +1,36 @@
+.fadeImg-appear {
+  opacity: 0;
+  transform: scale(0.8) translateY(200px);
+  z-index: 1;
+}
+
+.fadeImg-appear.fadeImg-appear-active {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+  transition: opacity 800ms linear 100ms, transform 800ms ease-in-out 100ms;
+}
+
+.fadeBody-appear {
+  opacity: 0;
+  transform: scale(0.5) translateY(0);
+  z-index: 1;
+}
+
+.fadeBody-appear.fadeBody-appear-active {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+  transition: opacity 200ms linear 100ms, transform 200ms ease-in-out 100ms;
+}
+
+
+.fadeTextBody-appear {
+  opacity: 0;
+  transform: scale(0) translateX(1000px);
+  z-index: 500;
+}
+
+.fadeTextBody-appear.fadeTextBody-appear-active {
+  opacity: 1;
+  transform: scale(1) translateX(0);
+  transition: opacity 1000ms linear 100ms, transform 1000ms ease-in-out 100ms;
+}

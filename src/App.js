@@ -5,12 +5,13 @@ import RightFooter from "./containers/RightFooter";
 import AppHeader from "./containers/AppHeader";
 import AppBody from "./containers/AppBody";
 
+
 import { withStyles } from "@material-ui/core/styles";
 
 const styles = () => ({
   appContainer: {
     backgroundColor: "#dcdcdc",
-    height: "100vh",
+    height: "100vh"
   }
 });
 

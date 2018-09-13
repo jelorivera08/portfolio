@@ -1,7 +1,8 @@
 import React from "react";
 import { withStyles } from "@material-ui/core/styles";
 import me from "../images/img2.jpg";
-import Typography from "@material-ui/core/Typography";
+import { CSSTransition } from "react-transition-group";
+import "./styles/AppBodyComponent.css";
 
 const styles = () => ({
   body: {
@@ -27,31 +28,57 @@ const styles = () => ({
     position: "absolute",
     left: "480px",
     padding: "0px 40px",
-    fontFamily: "arial"
+    fontFamily: "arial",
+    minHeight: "245px",
+    minWidth: "225px"
   }
 });
 
 const AppBodyComponent = props => (
   <div className={props.classes.body}>
-    <div className={props.classes.backgroundBody} />
-    <img
-      className={props.classes.imgBody}
-      height="500px"
-      src={me}
-      alt="lol can not"
-    />
-    <div className={props.classes.textBody}>
-      <Typography
-        style={{
-          color: "white",
-          fontSize: "25px",
-          fontFamily: "Montserrat"
-        }}
-      >
-        <h1>Hi!</h1>
-        <h3>I am a Front End Developer based in Manila.</h3>
-      </Typography>
-    </div>
+    <CSSTransition
+      key="one"
+      in={true}
+      appear={true}
+      timeout={1000}
+      classNames="fadeBody"
+    >
+      <div className={props.classes.backgroundBody} />
+    </CSSTransition>
+    <CSSTransition
+      key="one"
+      in={true}
+      appear={true}
+      timeout={1000}
+      classNames="fadeImg"
+    >
+      <img
+        className={props.classes.imgBody}
+        height="500px"
+        src={me}
+        alt="lol can not"
+      />
+    </CSSTransition>
+    <CSSTransition
+      key="one"
+      in={true}
+      appear={true}
+      timeout={1000}
+      classNames="fadeTextBody"
+    >
+      <div className={props.classes.textBody}>
+        <div
+          style={{
+            color: "white",
+            fontSize: "25px",
+            fontFamily: "Montserrat"
+          }}
+        >
+          <h1>Hi!</h1>
+          <h3>I am a Front End Developer based in Manila.</h3>
+        </div>
+      </div>
+    </CSSTransition>
   </div>
 );
 
