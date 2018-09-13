@@ -6,7 +6,8 @@
     "@material-ui/core": "^3.0.3",
     "react": "^16.5.0",
     "react-dom": "^16.5.0",
-    "react-scripts": "1.1.5"
+    "react-scripts": "1.1.5",
+    "react-social-icons": "^3.0.0"
   },
   "scripts": {
     "start": "react-scripts start",

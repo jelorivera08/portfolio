@@ -5,7 +5,7 @@ const styles = () => ({
   logo: {
     fontFamily: "Lobster",
     fontSize: "35px",
-    padding: "10px",
+    padding: "20px",
     position: "fixed"
   }
 });
