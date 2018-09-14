@@ -8,13 +8,16 @@ const styles = () => ({
     fontFamily: "Lobster",
     fontSize: "35px",
     padding: "20px",
-    position: "fixed"
+    position: "fixed",
+    cursor: "pointer"
   }
 });
 
 const JeloLogo = props => (
   <CSSTransition in={true} appear={true} timeout={1000} classNames="fadeLogo">
-    <div className={props.classes.logo}>JeLo</div>
+    <div onClick={props.handleClick} className={props.classes.logo}>
+      JeLo
+    </div>
   </CSSTransition>
 );
 

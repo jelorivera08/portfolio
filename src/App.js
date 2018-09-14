@@ -4,8 +4,8 @@ import LeftFooter from "./containers/LeftFooter";
 import RightFooter from "./containers/RightFooter";
 import AppHeader from "./containers/AppHeader";
 import AppBody from "./containers/AppBody";
-
-
+import { withRouter } from "react-router-dom";
+import { compose } from "redux";
 import { withStyles } from "@material-ui/core/styles";
 
 const styles = () => ({
@@ -16,11 +16,16 @@ const styles = () => ({
 });
 
 class App extends Component {
+  handleLogoClick = () => {
+    const { history } = this.props;
+    history.push("/");
+  };
+
   render() {
     const { classes } = this.props;
     return (
       <div className={classes.appContainer}>
-        <JeloLogo />
+        <JeloLogo handleClick={this.handleLogoClick} />
         <AppHeader />
         <LeftFooter />
         <RightFooter />
@@ -30,4 +35,7 @@ class App extends Component {
   }
 }
 
-export default withStyles(styles)(App);
+export default compose(
+  withRouter,
+  withStyles(styles)
+)(App);
